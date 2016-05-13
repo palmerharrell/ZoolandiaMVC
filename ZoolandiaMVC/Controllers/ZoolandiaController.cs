@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZoolandiaMVC.Models;
 
 namespace ZoolandiaMVC.Controllers
 {
@@ -16,7 +17,11 @@ namespace ZoolandiaMVC.Controllers
 
     public ActionResult Animals()
     {
-      return View();
+      using (var zoolandiaContext = new ZoolandiaContext())
+      {
+        List<Animal> animals = zoolandiaContext.Animal.Take(1000).ToList();
+        return View(animals);
+      }
     }
   }
 }
