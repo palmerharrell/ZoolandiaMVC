@@ -6,12 +6,17 @@ using System.Web.Mvc;
 
 namespace ZoolandiaMVC.Controllers
 {
-    public class ZoolandiaController : Controller
+  public class ZoolandiaController : Controller
+  {
+    // GET: Zoolandia
+    public ActionResult Index()
     {
-        // GET: Zoolandia
-        public ActionResult Index()
-        {
-            return View();
-        }
+        return View();
     }
+
+    public ActionResult Animals()
+    {
+      return View();
+    }
+  }
 }
