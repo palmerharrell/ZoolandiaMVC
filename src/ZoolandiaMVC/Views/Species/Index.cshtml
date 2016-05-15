@@ -1,0 +1,56 @@
+@model IEnumerable<ZoolandiaMVC.Models.Species>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdGenus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSpecies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.commonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.scientificName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
+        <th></th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdGenus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSpecies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.commonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.scientificName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.url)
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+</table>

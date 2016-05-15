@@ -8,9 +8,10 @@ using ZoolandiaMVC.Models;
 namespace ZoolandiaMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160515163908_Genus")]
+    partial class Genus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -186,66 +187,6 @@ namespace ZoolandiaMVC.Migrations
                     b.Property<int>("IdGenus");
 
                     b.Property<string>("scientificName");
-
-                    b.HasKey("ID");
-                });
-
-            modelBuilder.Entity("ZoolandiaMVC.Models.Habitat", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdHabitat");
-
-                    b.Property<int>("IdHabitatType");
-
-                    b.Property<string>("name");
-
-                    b.Property<bool>("open");
-
-                    b.HasKey("ID");
-                });
-
-            modelBuilder.Entity("ZoolandiaMVC.Models.HabitatEmployees", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdEmployee");
-
-                    b.Property<int>("IdHabitat");
-
-                    b.Property<int>("IdHabitatEmployees");
-
-                    b.HasKey("ID");
-                });
-
-            modelBuilder.Entity("ZoolandiaMVC.Models.HabitatType", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdHabitatType");
-
-                    b.Property<string>("name");
-
-                    b.HasKey("ID");
-                });
-
-            modelBuilder.Entity("ZoolandiaMVC.Models.Species", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("IdGenus");
-
-                    b.Property<int>("IdSpecies");
-
-                    b.Property<string>("commonName");
-
-                    b.Property<string>("scientificName");
-
-                    b.Property<string>("url");
 
                     b.HasKey("ID");
                 });
