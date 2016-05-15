@@ -98,7 +98,9 @@ namespace ZoolandiaMVC
                     name: "default",
                     template: "{controller=Animals}/{action=Index}/{id?}");
             });
-        }
+
+            SeedData.Initialize(app.ApplicationServices);
+    }
 
         // Entry point for the application.
         public static void Main(string[] args) => WebApplication.Run<Startup>(args);

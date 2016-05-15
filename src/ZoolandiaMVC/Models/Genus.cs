@@ -8,7 +8,6 @@ namespace ZoolandiaMVC.Models
   public class Genus
   {
     public int ID { get; set; }
-    public int IdGenus { get; set; }
     public string scientificName { get; set; }
   }
 }
