@@ -1,4 +1,4 @@
-@model IEnumerable<ZoolandiaMVC.Models.Animal>
+@model IEnumerable<ZoolandiaMVC.Models.AnimalDetails>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,16 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.IdHabitat)
+            @Html.DisplayNameFor(model => model.animalName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IdSpecies)
+            @Html.DisplayNameFor(model => model.animalAge)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.age)
+            @Html.DisplayNameFor(model => model.animalSpecies)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            @Html.DisplayNameFor(model => model.speciesCommonName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.animalHabitat)
         </th>
         <th></th>
     </tr>
@@ -29,16 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdHabitat)
+            @Html.DisplayFor(modelItem => item.animalName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IdSpecies)
+            @Html.DisplayFor(modelItem => item.animalAge)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.age)
+            @Html.DisplayFor(modelItem => item.animalSpecies)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            @Html.DisplayFor(modelItem => item.speciesCommonName)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.animalHabitat)
         </td>
         <td>
             <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

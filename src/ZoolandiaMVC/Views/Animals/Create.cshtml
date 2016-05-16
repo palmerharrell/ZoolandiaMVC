@@ -11,6 +11,7 @@
         <h4>Animal</h4>
         <hr />
         <div asp-validation-summary="ValidationSummary.ModelOnly" class="text-danger"></div>
+
         <div class="form-group">
             <label asp-for="IdHabitat" class="col-md-2 control-label"></label>
             <div class="col-md-10">
@@ -18,6 +19,15 @@
                 <span asp-validation-for="IdHabitat" class="text-danger" />
             </div>
         </div>
+
+        @*<div class="form-group">
+          <label asp-for="IdHabitat" class="col-md-2 control-label"></label>
+          <div class="col-md-10">
+            <input asp-for="IdHabitat" class="form-control" />
+            <span asp-validation-for="IdHabitat" class="text-danger" />
+          </div>
+        </div>*@
+
         <div class="form-group">
             <label asp-for="IdSpecies" class="col-md-2 control-label"></label>
             <div class="col-md-10">
